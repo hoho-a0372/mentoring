@@ -36,19 +36,17 @@ int size(){
 }
 
 int push(int x){
-	if(isFull() != 0){
-		stack.data[stack.top] = x;
-		stack.top++;
-		return stack.data[stack.top-1];
+	if(isFull()){
+		return -1;
 	}
-	else return -1;
+	else return stack.data[stack.top++]=x;
 }
 
 int pop(){
-	if(isEmpty != 0){
-		return stack.data[--stack.top];
+	if(isEmpty()){
+		return -1;
 	}
-	else return -1;
+	else return stack.data[--stack.top];
 }
 
 int peek(){
